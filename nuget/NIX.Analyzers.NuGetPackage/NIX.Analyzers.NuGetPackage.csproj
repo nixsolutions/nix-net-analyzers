@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <YearNow>$([System.DateTime]::UtcNow.Year.ToString())</YearNow>
+    <RootNamespace>NIX.Analyzers.NuGetPackage</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>NIX.Analyzers.Analyzers</PackageId>
+    <PackageVersion>2.0.0</PackageVersion>
+    <Authors>NIX .NET Department</Authors>
+    <PackageLicenseUrl>https://qwiki.unitedsofthouse.com/pages/viewpage.action?pageId=105269630</PackageLicenseUrl>
+    <PackageProjectUrl>https://qwiki.unitedsofthouse.com/pages/viewpage.action?pageId=105269630</PackageProjectUrl>
+    <PackageIconUrl>https://www.nixsolutions.com/wp-content/themes/nixsite6g/favicons/NIX_64x64.png</PackageIconUrl>
+    <RepositoryUrl>https://nix-net.visualstudio.com/Common/_git/StylecopAnalyzer</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Provides analyzers for validating code with nix custom rules</Description>
+    <Copyright>Copyright (c) 2015-$(YearNow) NIX</Copyright>
+    <PackageTags>Analyzers, Roslyn</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\NIX.Analyzers.Analyzers\NIX.Analyzers.Analyzers.csproj" />
+    <ProjectReference Include="..\..\src\NIX.Analyzers.CodeFixProviders\NIX.Analyzers.CodeFixProviders.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath="tools" />
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\NIX.Analyzers.Analyzers.dll" PackagePath="analyzers/dotnet/cs" />
+      <TfmSpecificPackageFile Include="$(OutputPath)\NIX.Analyzers.CodeFixProviders.dll" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+  </Target>
+</Project>
