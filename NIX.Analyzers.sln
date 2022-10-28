@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIX.Analyzers.Vsix", "src\NIX.Analyzers.Vsix\NIX.Analyzers.Vsix.csproj", "{9FF90FCB-C69F-436E-997E-E8FAD2C918BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIX.Analyzers.NuGetPackage", "nuget\NIX.Analyzers.NuGetPackage\NIX.Analyzers.NuGetPackage.csproj", "{2FD94D43-6FF9-43BC-8D05-2ACBD55ADFC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIX.Analyzers", "nuget\NIX.Analyzers\NIX.Analyzers.csproj", "{2FD94D43-6FF9-43BC-8D05-2ACBD55ADFC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIX.Analyzers.Analyzers", "src\NIX.Analyzers.Analyzers\NIX.Analyzers.Analyzers.csproj", "{E767020F-44DA-4F76-B133-823685B363B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIX.Analyzers.Rules", "src\NIX.Analyzers.Rules\NIX.Analyzers.Rules.csproj", "{E767020F-44DA-4F76-B133-823685B363B9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIX.Analyzers.CodeFixProviders", "src\NIX.Analyzers.CodeFixProviders\NIX.Analyzers.CodeFixProviders.csproj", "{35025DAB-8DA7-4745-9826-BFDCDC1F94DC}"
 EndProject

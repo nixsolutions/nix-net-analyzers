@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>10.0</LangVersion>
     <PackageId>Nix.StyleCop.Analyzers.lib</PackageId>
+    <RootNamespace>NIX.Analyzers.Analyzers</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

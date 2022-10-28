@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using NIX.Analyzers.Analyzers.Analyzers.Design;
+using NIX.Analyzers.Analyzers.Design;
 
 namespace NIX.Analyzers.Analyzers.Infrastructure.Rules
 {

@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NIX.Analyzers.Analyzers\NIX.Analyzers.Analyzers.csproj" />
+    <ProjectReference Include="..\NIX.Analyzers.Rules\NIX.Analyzers.Rules.csproj" />
   </ItemGroup>
 
   <ItemGroup>

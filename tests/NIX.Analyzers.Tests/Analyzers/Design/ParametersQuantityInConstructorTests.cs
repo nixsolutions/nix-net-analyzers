@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using NIX.Analyzers.Analyzers.Analyzers.Design;
+using NIX.Analyzers.Analyzers.Design;
 using Nix.StyleCop.Tests.Infrastructure.Results;
 using Nix.StyleCop.Tests.Infrastructure.Verifiers;
 

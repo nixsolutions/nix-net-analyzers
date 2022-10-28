@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis.Text;
 using NIX.Analyzers.Analyzers.Infrastructure.Rules;
 using NIX.Analyzers.Analyzers.Infrastructure.Settings;
 
-namespace NIX.Analyzers.Analyzers.Analyzers.Design
+namespace NIX.Analyzers.Analyzers.Design
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class FileIsTooLongAnalyzer : DiagnosticAnalyzer

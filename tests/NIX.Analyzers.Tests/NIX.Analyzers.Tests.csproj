@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\NIX.Analyzers.Analyzers\NIX.Analyzers.Analyzers.csproj" />
+    <ProjectReference Include="..\..\src\NIX.Analyzers.Rules\NIX.Analyzers.Rules.csproj" />
     <ProjectReference Include="..\..\src\NIX.Analyzers.CodeFixProviders\NIX.Analyzers.CodeFixProviders.csproj" />
   </ItemGroup>
 
