@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+        <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Nullable>enable</Nullable>
+        <WarningsAsErrors>nullable</WarningsAsErrors>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);CA1014</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EditorConfigFilesToCopy Include="$(MSBuildThisFileDirectory)..\content\Rules\.editorconfig" />
+    </ItemGroup>
+
+    <Target Name="CopyEditorConfig" BeforeTargets="BeforeBuild">
+        <Message Text="Copying the .editorconfig file from '@(EditorConfigFilesToCopy)' to '$(MSBuildProjectDirectory)'"></Message>
+        <Copy
+                SourceFiles="@(EditorConfigFilesToCopy)"
+                DestinationFolder="$(SolutionDir)"
+                SkipUnchangedFiles="true"
+                UseHardlinksIfPossible="false"
+                Condition="!Exists('$(SolutionDir)\.editorconfig')"
+        />
+    </Target>
+</Project>
