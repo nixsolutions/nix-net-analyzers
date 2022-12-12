@@ -1,35 +1,35 @@
-name: Build
-
-on:
-  pull_request:
-
-env:
-  NUGET_PROJECT_PATH: nuget/NIX.Analyzers
-  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}/output
-
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install dotnet
-        uses: actions/setup-dotnet@v1
-
-      - name: Restore packages
-        run: dotnet restore ${{ env.NUGET_PROJECT_PATH }}
-
-      - name: Build project
-        run: dotnet build ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj --no-restore
-
-      - name: Pack project
-        run: dotnet pack ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj /p:NuspecFile=./NIX.Analyzers.nuspec --no-restore --no-build --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
-
-      - name: Save package to artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: nupkgs
-          path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg
+#name: Build
+#
+#on:
+#  pull_request:
+#
+#env:
+#  NUGET_PROJECT_PATH: nuget/NIX.Analyzers
+#  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}/output
+#
+#jobs:
+#  build:
+#    name: Build
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Install dotnet
+#        uses: actions/setup-dotnet@v1
+#
+#      - name: Restore packages
+#        run: dotnet restore ${{ env.NUGET_PROJECT_PATH }}
+#
+#      - name: Build project
+#        run: dotnet build ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj --no-restore
+#
+#      - name: Pack project
+#        run: dotnet pack ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj /p:NuspecFile=./NIX.Analyzers.nuspec --no-restore --no-build --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+#
+#      - name: Save package to artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: nupkgs
+#          path: ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg
