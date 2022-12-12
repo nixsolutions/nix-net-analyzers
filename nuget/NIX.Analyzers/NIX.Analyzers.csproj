@@ -26,7 +26,7 @@
     <NoDefaultExcludes>true</NoDefaultExcludes>
 
     <NuspecFile>NIX.Analyzers.nuspec</NuspecFile>
-    <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
+    <NuspecProperties>version=$(PackageVersion);copyright=Copyright (c) 2015-$(YearNow) NIX</NuspecProperties>
   </PropertyGroup>
 
   <ItemGroup>

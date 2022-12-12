@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>NIX.Analyzers</id>
-    <version>2.0.0</version>
+    <version>$version$</version>
     <authors>NIX .NET Department</authors>
     <licenseUrl>https://github.com/nixsolutions/nix-net-analyzers/blob/main/LICENSE</licenseUrl>
     <projectUrl>https://github.com/nixsolutions/nix-net-analyzers</projectUrl>
     <iconUrl>https://www.nixsolutions.com/wp-content/themes/nixsite6g/favicons/NIX_64x64.png</iconUrl>
     <description>Provides analyzers for validating code with nix custom rules</description>
-    <copyright>Copyright (c) 2015-2022 NIX</copyright>
+    <copyright>$copyright$</copyright>
     <tags>Analyzers, Roslyn</tags>
     <repository url="https://github.com/nixsolutions/nix-net-analyzers" />
     <dependencies>
