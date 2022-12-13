@@ -23,6 +23,10 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
 
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+
+    <NuspecFile>NIX.Analyzers.nuspec</NuspecFile>
+    <NuspecProperties>version=$(PackageVersion);copyright=Copyright (c) 2015-$(YearNow) NIX</NuspecProperties>
   </PropertyGroup>
 
   <ItemGroup>

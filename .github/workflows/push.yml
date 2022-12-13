@@ -1,0 +1,48 @@
+#name: Push
+#
+#on:
+#  workflow_dispatch:
+#
+#env:
+#  NUGET_PROJECT_PATH: nuget/NIX.Analyzers
+#  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}/output
+#  AZURE_DEVOPS_TOKEN: abc123
+#  AZURE_ARTIFACTS_FEED_URL: https://pkgs.dev.azure.com/mykhailozhmaitsev/_packaging/mykhailozhmaitsev/nuget/v3/index.json
+#
+#jobs:
+#  push:
+#    name: Push
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Install dotnet
+#        uses: actions/setup-dotnet@v1
+#        with:
+#          source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
+#        env:
+#          NUGET_AUTH_TOKEN: ${{ env.AZURE_DEVOPS_TOKEN }}
+#
+#      - name: Restore packages
+#        run: dotnet restore ${{ env.NUGET_PROJECT_PATH }}
+#
+#      - name: Build project
+#        run: dotnet build ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj --no-restore
+#
+#      - name: Generate build number
+#        id: buildnumber
+#        uses: einaregilsson/build-number@v3
+#        with:
+#          token: ${{ secrets.github_token }}
+#          prefix: ${{ secrets.MAJOR_VERSION }}.${{ secrets.MINOR_VERSION }}
+#
+#      - name: Print new build number
+#        run: echo "Build number is ${{github.run_number}} ${{ secrets.MAJOR_VERSION }}.${{ secrets.MINOR_VERSION }}.$BUILD_NUMBER"
+#
+#      - name: Pack project
+#        run: dotnet pack ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj /p:PackageVersion=${{ secrets.MAJOR_VERSION }}.${{ secrets.MINOR_VERSION }}.$(($BUILD_NUMBER-1)) --no-restore --no-build --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+#
+#      - name: Push package
+#        run: dotnet nuget push --api-key AzureArtifacts ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg
