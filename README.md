@@ -10,13 +10,13 @@ Decision to changes those rules is up to project Tech Lead.
 
 Applicable for: **.NET 5** and higher. Partially can work for **.NET 3.1**.
 
-NIX .NET Department StyleCops comes with **[NuGet Package](https://www.nuget.org/)**:
-![nuget](https://user-images.githubusercontent.com/119926713/207299454-bc66f720-7763-4246-a2a0-65c40908ac2c.png)  
+NIX .NET Department StyleCops comes with **[NuGet Package](https://www.nuget.org/packages/NIX.Analyzers)**:  
+![image](https://user-images.githubusercontent.com/119926713/208702911-39f4fe2b-b644-41b5-a21c-471bd0c63c8f.png)  
 The package has a dependency on **[StyleCop.Analyzers](https://www.nuget.org/packages/StyleCop.Analyzers/)** _(1.1.118)_ so it will be automatically installed.
 
 ## ✅ Installation
 
-* Install **[NuGet Package](https://www.nuget.org/)** to every project in solution
+* Install **[NuGet Package](https://www.nuget.org/packages/NIX.Analyzers)** to every project in solution
 * If you don't have **.editorconfig** yet, the installation will automatically add the **.editorconfig** template file to the .sln folder. Or you can do it manually: you can find file in the repository by this path `nuget/NIX.Analyzers/assets/config/.editorconfig`  
   Now your project is using the rules described in the file. All warnings from .Net Analyzers (**CA**xxxx, **CS**xxxx) except **CA1058**, **CA1062** marked as Messages.  
   You can find more information about StyleCop (**SA**xxxx/**SX**xxxx) rules **[here](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md)**.
