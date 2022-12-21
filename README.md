@@ -43,3 +43,6 @@ To override these rules you must use **.editorconfig** and specify which rule yo
 `dotnet_diagnostic.Nix03.max_file_lines = 1000`  
 `dotnet_diagnostic.Nix04.max_params_in_method = 5`  
 `dotnet_diagnostic.Nix05.max_params_in_ctor = 5`
+
+P.S. Unfortunately, [Rider doesn't support](https://youtrack.jetbrains.com/issue/RIDER-12080) PowerShell scripts on NuGet installation, so you should **add .editorconfig manually**.  
+You can find the file in the repository by this path `nuget/NIX.Analyzers/assets/config/.editorconfig`
