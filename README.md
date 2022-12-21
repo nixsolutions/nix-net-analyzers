@@ -4,13 +4,13 @@ Custom _**Roslyn Analyzers**_ which NIX team uses to enforce coding standards
 
 ## 📚 Description
 
-By default - .NET Team uses **StyleCop Analyzers** for code quality and code style checks. The goal is to define standard approach which all projects will use.
+By default - NIX Team uses **StyleCop Analyzers** for code quality and code style checks. The goal is to define standard approach which all projects will use.
 
 Decision to changes those rules is up to project Tech Lead.
 
 Applicable for: **.NET 5** and higher. Partially can work for **.NET 3.1**.
 
-NIX .NET Department StyleCops comes with **[NuGet Package](https://www.nuget.org/packages/NIX.Analyzers)**:  
+NIX Team StyleCops comes with **[NuGet Package](https://www.nuget.org/packages/NIX.Analyzers)**:  
 ![image](https://user-images.githubusercontent.com/119926713/208702911-39f4fe2b-b644-41b5-a21c-471bd0c63c8f.png)  
 The package has a dependency on **[StyleCop.Analyzers](https://www.nuget.org/packages/StyleCop.Analyzers/)** _(1.1.118)_ so it will be automatically installed.
 
@@ -28,7 +28,7 @@ This will prevent project building in case of style errors.
 
 ## ⚙ Settings
 
-NIX .NET Department has few custom code rules to ensure better software quality and following clean code practices.
+NIX Team has few custom code rules to ensure better software quality and following clean code practices.
 
 Custom rules:
 1. Line must not be longer than **200** characters;
