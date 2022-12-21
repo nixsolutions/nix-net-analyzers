@@ -1,4 +1,4 @@
-# 🔍 NIX .NET StyleCop Analyzers
+# 🔍 NIX .NET Analyzers
 
 Custom _**Roslyn Analyzers**_ which NIX team uses to enforce coding standards
 
