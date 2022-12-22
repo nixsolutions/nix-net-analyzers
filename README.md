@@ -20,11 +20,6 @@ The package has a dependency on **[StyleCop.Analyzers](https://www.nuget.org/pac
 * If you don't have **.editorconfig** yet, the installation will automatically add the **.editorconfig** template file to the .sln folder. Or you can do it manually: you can find file in the repository by this path `nuget/NIX.Analyzers/assets/config/.editorconfig`  
   Now your project is using the rules described in the file. All warnings from .Net Analyzers (**CA**xxxx, **CS**xxxx) except **CA1058**, **CA1062** marked as Messages.  
   You can find more information about StyleCop (**SA**xxxx/**SX**xxxx) rules **[here](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md)**.
-* Change project  file (**.csproj**) and add next lines in <PropertyGroup> and then save the file:
-  `<TreatWarningsAsErrors>true</TreatWarningsAsErrors>`  
-  `<WarningsAsErrors/>`
-![image](https://user-images.githubusercontent.com/119926713/207304765-e96537ec-a0b9-4f80-a3f4-c98bc20d913d.png)
-This will prevent project building in case of style errors.
 
 ## ⚙ Settings
 
