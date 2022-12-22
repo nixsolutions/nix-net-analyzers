@@ -15,13 +15,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install dotnet
         uses: actions/setup-dotnet@v1
 
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Restore packages
+        run: dotnet restore ${{ env.NUGET_PROJECT_PATH }}
+
+      - name: Build project
+        run: dotnet build ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj --no-restore
 
       - name: Get Previous tag
         id: previoustag
@@ -36,7 +40,7 @@ jobs:
           replace: ''
 
       - name: Pack project
-        run: dotnet pack ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj /p:PackageVersion=${{ steps.version.outputs.value }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+        run: dotnet pack ${{ env.NUGET_PROJECT_PATH }}/NIX.Analyzers.csproj /p:PackageVersion=${{ steps.version.outputs.value }} --no-restore --no-build --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
       - name: Push package
         run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
