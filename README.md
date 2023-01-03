@@ -1,4 +1,4 @@
-# 🔍 NIX .NET Analyzers
+# 🔍 NIX .NET Analyzers · [![image](https://img.shields.io/nuget/v/NIX.Analyzers)](https://www.nuget.org/packages/NIX.Analyzers) ![image](https://img.shields.io/nuget/dt/NIX.Analyzers) ![image](https://img.shields.io/github/license/nixsolutions/nix-net-analyzers) ![image](https://img.shields.io/github/actions/workflow/status/nixsolutions/nix-net-analyzers/build.yml)
 
 Custom _**Roslyn Analyzers**_ which NIX team uses to enforce coding standards
 
